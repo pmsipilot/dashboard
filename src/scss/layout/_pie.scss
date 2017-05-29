@@ -1,0 +1,76 @@
+.layout-pie {
+  $base-color: #e6e6e6;
+  $active-color: #ff5151;
+  $shadow: rgba(0, 0, 0, .15);
+  $pie-r: 150px;
+  $pie-w: 20px;
+
+  .piechart {
+
+    .pie-container {
+      position: relative;
+      width: $pie-r;
+      margin: auto;
+
+      &::before {
+        content: '60 %';
+        display: block;
+        position: absolute;
+        top: calc(50% - .25em);
+        left: 0;
+        width: 100%;
+        text-align: center;
+        line-height: 1em;
+      }
+
+      .progress-pie {
+        position: relative;
+        width: $pie-r;
+        height: $pie-r;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-top: $pie-w solid $active-color;
+        border-right: $pie-w solid $active-color;
+        border-bottom: $pie-w solid $base-color;
+        border-left: $pie-w solid $base-color;
+        transform: rotate(45deg);
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          left: 0;
+          width: $pie-r - $pie-w * 2;
+          height: $pie-r - $pie-w * 2;
+          border-radius: 50%;
+          transform: rotate(-45deg);
+          box-shadow: 0 0 6px $shadow;
+        }
+
+        .pie {
+          display: block;
+          width: $pie-r;
+          height: $pie-r;
+          box-sizing: border-box;
+          border-radius: 50%;
+          margin: (-$pie-w) 0 0 (-$pie-w);
+          border-bottom: $pie-w solid transparent;
+          border-left: $pie-w solid transparent;
+          border-top: $pie-w solid $base-color;
+          border-right: $pie-w solid $base-color;
+          transform-origin: 50% 50%;
+          transform: rotate(60 * 3.6deg);
+
+          &.mt50 {
+            border-bottom: $pie-w solid $active-color;
+            border-left: $pie-w solid $active-color;
+            border-top: $pie-w solid transparent;
+            border-right: $pie-w solid transparent;
+          }
+        }
+      }
+    }
+  }
+}

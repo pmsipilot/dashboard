@@ -1,0 +1,69 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": "<strong>RPM pmsipilot-referentiel</strong>",
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "build-rpmdev-referentiel",
+      "url": "http://srv-hudson:8080/job/build-rpmdev-referentiel/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ci-unit-main-referentiel",
+      "url": "http://srv-hudson:8080/job/ci-unit-main-referentiel/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "installation-test-referentiel-openstack",
+      "url": "http://srv-hudson:8080/job/installation-test-referentiel-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "installation-test-referentiel-vbox",
+      "url": "http://srv-hudson:8080/job/installation-test-referentiel-vbox/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-pmsipilot-referentiel-backend-sonar",
+      "url": "http://srv-hudson:8080/job/novm-pmsipilot-referentiel-backend-sonar/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-referentiel-backend-test-unit-master",
+      "url": "http://srv-hudson:8080/job/novm-referentiel-backend-test-unit-master/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-referentiel-frontend-test-unit-master",
+      "url": "http://srv-hudson:8080/job/novm-referentiel-frontend-test-unit-master/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "update-test-referentiel-openstack",
+      "url": "http://srv-hudson:8080/job/update-test-referentiel-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-referentiel-backend-functional",
+      "url": "http://srv-hudson:8080/job/vmrpm-referentiel-backend-functional/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-referentiel-frontend-functional",
+      "url": "http://srv-hudson:8080/job/vmrpm-referentiel-frontend-functional/",
+      "color": "blue"
+    }
+  ],
+  "name": "referentiel",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/bi-master/view/referentiel/"
+}

@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+
+  .react-grid-layout {
+    .react-grid-placeholder {
+      z-index: 9999;
+    }
+  }
+
+  // je suis un fdp
+  a[href="http://www.amcharts.com/javascript-charts/"] {
+    display: none !important;
+  }
+}

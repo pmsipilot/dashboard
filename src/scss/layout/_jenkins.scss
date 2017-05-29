@@ -1,0 +1,31 @@
+.layout-jenkins {
+  @include status(border-color);
+
+  .header {
+    @include status(background);
+  }
+
+  .body {
+    .children {
+      .child {
+        @include status(background);
+        margin: 5px 0;
+        padding: 5px;
+        position: relative;
+        border-radius: 5px;
+        color: $white;
+
+        .view {
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

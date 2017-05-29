@@ -1,0 +1,17 @@
+// code honteusement pompé sur codepen(https://codepen.io/AtomicNoggin/pen/fEish) et aménagé de façon plus générique
+.layout-camembert {
+  @include status(border-color);
+
+  .header {
+    @include status(background);
+  }
+
+  .body {
+    position: absolute;
+    top: $height-elem-header;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2px;
+  }
+}

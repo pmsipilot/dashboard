@@ -1,0 +1,123 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": "\r\n",
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "010-build-bi-hosp-iso",
+      "url": "http://srv-hudson:8080/job/010-build-bi-hosp-iso/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "010-test-bi-hosp-preexec",
+      "url": "http://srv-hudson:8080/job/010-test-bi-hosp-preexec/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "015-build-maj-hosp",
+      "url": "http://srv-hudson:8080/job/015-build-maj-hosp/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "015-build-maj-hosp-no-data-ods",
+      "url": "http://srv-hudson:8080/job/015-build-maj-hosp-no-data-ods/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "020-install-and-snapshot-bi-hosp-openstack",
+      "url": "http://srv-hudson:8080/job/020-install-and-snapshot-bi-hosp-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "020-install-and-snapshot-bi-hosp-vbox",
+      "url": "http://srv-hudson:8080/job/020-install-and-snapshot-bi-hosp-vbox/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "020-update-and-snapshot-bi-hosp-openstack",
+      "url": "http://srv-hudson:8080/job/020-update-and-snapshot-bi-hosp-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "030-test-bi-hosp-backup",
+      "url": "http://srv-hudson:8080/job/030-test-bi-hosp-backup/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "030-test-installed-bi-hosp",
+      "url": "http://srv-hudson:8080/job/030-test-installed-bi-hosp/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "030-test-smb",
+      "url": "http://srv-hudson:8080/job/030-test-smb/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "030-test-update-auto",
+      "url": "http://srv-hudson:8080/job/030-test-update-auto/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "040-test-bi-hosp-restore",
+      "url": "http://srv-hudson:8080/job/040-test-bi-hosp-restore/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "100-publish-bi-hosp-launcher",
+      "url": "http://srv-hudson:8080/job/100-publish-bi-hosp-launcher/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "110-publish-bi-hosp-freemium",
+      "url": "http://srv-hudson:8080/job/110-publish-bi-hosp-freemium/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "110-publish-bi-hosp-premium-vbox",
+      "url": "http://srv-hudson:8080/job/110-publish-bi-hosp-premium-vbox/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "110-publish-box-amazon-bi",
+      "url": "http://srv-hudson:8080/job/110-publish-box-amazon-bi/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "110-publish-maj-amazon",
+      "url": "http://srv-hudson:8080/job/110-publish-maj-amazon/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "120-publish-bi-hosp-premium-ova",
+      "url": "http://srv-hudson:8080/job/120-publish-bi-hosp-premium-ova/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "install-and-snapshot-bi-hosp-WANTED_VERSION-openstack",
+      "url": "http://srv-hudson:8080/job/install-and-snapshot-bi-hosp-WANTED_VERSION-openstack/",
+      "color": "blue"
+    }
+  ],
+  "name": "bi-hosp",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/boxes-images/view/bi-hosp/"
+}

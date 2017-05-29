@@ -1,0 +1,61 @@
+@mixin blinker($name, $prop, $color) {
+  @keyframes blinker__#{$prop}__#{$name} {
+    0% {
+      #{$prop}: rgba($color, 1);
+    }
+
+    50% {
+      #{$prop}: rgba($color, .5);
+    }
+
+    100% {
+      #{$prop}: rgba($color, 1);
+    }
+  }
+}
+
+@mixin status($prop) {
+  &.status {
+    &__success {
+      #{$prop}: $green;
+
+      &__pending {
+        @include blinker('success', $prop, $green);
+        #{$prop}: $green;
+        animation: blinker__#{$prop}__success 2s infinite;
+      }
+    }
+
+    &__undefined,
+    &__warning {
+      #{$prop}: $yellow;
+
+      &__pending {
+        @include blinker('warning', $prop, $yellow);
+        #{$prop}: $yellow;
+        animation: blinker__#{$prop}__warning 2s infinite;
+      }
+    }
+
+    &__failed {
+      #{$prop}: $red;
+
+      &__pending {
+        @include blinker('failed', $prop, $red);
+        #{$prop}: $red;
+        animation: blinker__#{$prop}__failed 2s infinite;
+      }
+    }
+
+    &__disabled,
+    &__aborted {
+      #{$prop}: $grey;
+
+      &__pending {
+        @include blinker('disabled', $prop, $grey);
+        #{$prop}: $grey;
+        animation: blinker__#{$prop}__disabled 2s infinite;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.layout-loader {
+  @keyframes glyphicon-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      content: '';
+    }
+
+    25% {
+      content: '.';
+    }
+
+    50% {
+      content: '..';
+    }
+
+    75% {
+      content: '...';
+    }
+  }
+
+  .animate {
+    animation: glyphicon-spin 1s infinite linear;
+  }
+
+  .loading {
+    margin: 0 $padding-classic;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      animation: loading 2s infinite linear;
+    }
+  }
+
+  .body {
+    height: calc(100% - #{$height-elem-header} - #{$padding-big});
+    overflow-y: auto;
+    margin-bottom: $padding-big;
+  }
+
+  .displayError {
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+
+    span {
+      margin-right: $padding-small;
+
+      &.object {
+        color: $blue;
+      }
+
+      &.list {
+        color: $grey;
+      }
+
+      &.string {
+        color: $green;
+      }
+
+      &.number {
+        color: $red;
+      }
+
+      &.unknow {
+        border-bottom: 2px dotted $red;
+        display: inline-block;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 100%;
+          border-bottom: 2px dotted $red;
+          position: absolute;
+          font-size: 16px;
+          top: 15px;
+          left: -2px;
+          display: block;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  &.p404 {
+    background: $black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+    .body {
+      height: calc(100% - #{$height-elem-header} - #{$padding-big});
+      overflow-y: auto;
+      margin-bottom: $padding-big;
+
+      .hit-the-floor {
+        height: 100%;
+        color: $white;
+        font-size: 12em;
+        font-weight: bold;
+        font-family: Helvetica;
+        text-shadow: 0 1px 0 darken($white, 20),
+        0 2px 0 darken($white, 21),
+        0 3px 0 rgba($white, .3),
+        0 4px 0 rgba($white, .3),
+        0 5px 0 rgba($white, .3),
+        0 6px 1px rgba($white, .1),
+        0 0 5px rgba($white, .1),
+        0 1px 3px rgba($white, .3),
+        0 3px 5px rgba($white, .2),
+        0 5px 10px rgba($white, .25),
+        0 10px 10px rgba($white, .2),
+        0 20px 20px rgba($white, .15);
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": "<strong>RPM pmsipilot-metadata</strong>",
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "110-publish-metadata_server-box-amazon-bi",
+      "url": "http://srv-hudson:8080/job/110-publish-metadata_server-box-amazon-bi/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "build-rpmdev-metadata",
+      "url": "http://srv-hudson:8080/job/build-rpmdev-metadata/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "ci-unit-main-metadata-server",
+      "url": "http://srv-hudson:8080/job/ci-unit-main-metadata-server/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "installation-test-metadata-openstack",
+      "url": "http://srv-hudson:8080/job/installation-test-metadata-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "installation-test-metadata-testdb",
+      "url": "http://srv-hudson:8080/job/installation-test-metadata-testdb/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "installation-test-metadata-vbox",
+      "url": "http://srv-hudson:8080/job/installation-test-metadata-vbox/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-metadata-server-git-diff-master",
+      "url": "http://srv-hudson:8080/job/novm-metadata-server-git-diff-master/",
+      "color": "red"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-metadata-server-sonar",
+      "url": "http://srv-hudson:8080/job/novm-metadata-server-sonar/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "novm-metadata-server-unit-master",
+      "url": "http://srv-hudson:8080/job/novm-metadata-server-unit-master/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "update-test-metadata-openstack",
+      "url": "http://srv-hudson:8080/job/update-test-metadata-openstack/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-metadata-data-ods-doc-coverage",
+      "url": "http://srv-hudson:8080/job/vmrpm-metadata-data-ods-doc-coverage/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-metadata-object-tester",
+      "url": "http://srv-hudson:8080/job/vmrpm-metadata-object-tester/",
+      "color": "disabled"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-metadata-server-test-functional-master",
+      "url": "http://srv-hudson:8080/job/vmrpm-metadata-server-test-functional-master/",
+      "color": "disabled"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-metadata-server-test-integration-pg-master",
+      "url": "http://srv-hudson:8080/job/vmrpm-metadata-server-test-integration-pg-master/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "vmrpm-metadata-server-test-integration-pg-master-querycache",
+      "url": "http://srv-hudson:8080/job/vmrpm-metadata-server-test-integration-pg-master-querycache/",
+      "color": "blue"
+    }
+  ],
+  "name": "metadata",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/bi-master/view/metadata/"
+}

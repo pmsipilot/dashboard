@@ -1,0 +1,81 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": "<a href=\"#\" id=\"todo\"></a>\r\n<h1>Liste de TODO pour les tests Hudson du projet PILOT : </h1>\r\n\r\n\r\n\r\n",
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-cdg",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-cdg/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-core",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-core/",
+      "color": "yellow"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-doc",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-doc/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-externe",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-externe/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-had",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-had/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-mco",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-mco/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-psy",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-psy/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-ssr",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-ssr/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-transverses",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-transverses/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-unit",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-unit/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-launcher-upgrade",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-launcher-upgrade/",
+      "color": "blue"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-master-time_consuming",
+      "url": "http://srv-hudson:8080/job/pmsipilot-master-time_consuming/",
+      "color": "blue"
+    }
+  ],
+  "name": "pmsipilot-master",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/pmsipilot-master/"
+}

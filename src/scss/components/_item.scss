@@ -1,0 +1,121 @@
+.react-grid-item {
+  z-index: 1;
+
+  &:hover {
+    z-index: 2;
+  }
+
+  > .react-resizable-handle {
+    @extend .glyphicon;
+    @extend .glyphicon-resize-small;
+    bottom: 0;
+    right: $padding-small;
+    background: none;
+    position: absolute;
+    top: auto;
+    transform: rotate(90deg);
+  }
+
+  &.container_small:not(.moving) {
+    height: $height-elem-header !important;
+
+    > .react-resizable-handle {
+      display: none;
+    }
+  }
+
+  &.moving {
+    background: rgba($red, .5);
+
+    > .react-resizable-handle {
+      display: none;
+    }
+  }
+
+  .react-draggable-handle {
+    position: absolute;
+    right: $padding-small;
+    top: $padding-small;
+    color: $white;
+
+    &:hover {
+      cursor: move;
+    }
+  }
+
+  .element {
+    height: 100%;
+    overflow: hidden;
+    border: $border solid $black;
+    border-radius: $padding-small;
+
+    .header {
+      padding: 0 $padding-big;
+      border-radius: 0;
+      background: $black;
+      height: $height-elem-header;
+      color: $white;
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      font-size: 1em;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    .body {
+      padding: $padding-classic;
+    }
+
+    .footer {
+      font-size: .8em;
+      padding: $padding-small $padding-classic;
+      background: $lightgrey;
+      position: absolute;
+      left: $border;
+      right: $border;
+      bottom: $border;
+      height: $height-elem-header;
+    }
+
+    .element-actions {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $padding-small * 5;
+
+
+      .update {
+        position: absolute;
+        top: $padding-small;
+        left: $padding-small;
+        color: $white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .actions-right {
+        position: absolute;
+        top: $padding-small;
+        right: $padding-small * 5;
+
+        .action {
+          margin: 0 $padding-small;
+          text-align: center;
+          color: $white;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  &.react-draggable-dragging {
+    // background: $red;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": null,
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "build-pilot-rpm",
+      "url": "http://srv-hudson:8080/job/build-pilot-rpm/",
+      "color": "blue"
+    }
+  ],
+  "name": "pmsipilot-build",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/pmsipilot-build/"
+}

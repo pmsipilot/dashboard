@@ -1,0 +1,15 @@
+{
+  "_class": "hudson.model.ListView",
+  "description": null,
+  "jobs": [
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "pmsipilot-dep-lib-groupage-unit",
+      "url": "http://srv-hudson:8080/job/pmsipilot-dep-lib-groupage-unit/",
+      "color": "blue"
+    }
+  ],
+  "name": "pmsipilot-dependencies",
+  "property": [],
+  "url": "http://srv-hudson:8080/view/index/view/pmsipilot-dependencies/"
+}

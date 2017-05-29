@@ -1,0 +1,55 @@
+.boardTab {
+  position: relative;
+
+  a:focus {
+    outline: 0;
+  }
+
+  .addTab {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $h-tab;
+    height: $h-tab;
+    z-index: 2;
+    border-bottom: 1px solid $lightgrey;
+    border-left: 1px solid $lightgrey;
+    text-align: center;
+    padding: 9px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .react-tabs {
+
+    [role=tablist] {
+      height: $h-tab;
+      width: calc(100% - #{$h-tab});
+      margin: 0;
+      border-color: $lightgrey;
+    }
+
+    [role=tab] {
+      padding-right: 30px;
+      border-color: $lightgrey;
+
+      .glyphicon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 10px;
+        color: $red;
+        border-left: 1px solid $lightgrey;
+        border-bottom: 1px solid $lightgrey;
+        padding: 2px;
+        border-bottom-left-radius: 5px;
+      }
+    }
+
+    [role=tabpanel] {
+      height: calc(100vh - #{$h-header} - #{$h-tab});
+    }
+  }
+}
