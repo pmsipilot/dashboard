@@ -81,7 +81,7 @@ export default class Header extends React.Component {
                             <span></span>
                         </div>
                     </div>
-                    <h1>Application Name</h1>
+                    <h1>EaserBoard</h1>
                 </div>
                 <div className="right">
                     <div className="actions">
