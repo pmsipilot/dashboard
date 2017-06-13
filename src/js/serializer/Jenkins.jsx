@@ -23,7 +23,7 @@ export default class Jenkins {
         const values = {};
 
         data.jobs.forEach((job) => {
-            if (successStatuts[job.color] > success) {
+            if (successStatuts[job.color] > success && successStatuts[job.color] !== 4) {
                 success = successStatuts[job.color];
                 successResult = job.color;
             }
