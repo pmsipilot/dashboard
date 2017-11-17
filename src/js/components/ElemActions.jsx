@@ -146,7 +146,7 @@ export default class Elem extends React.Component {
                         </div>
                         <div className="form-group">
                             <label className="checkbox-inline" htmlFor="toggle">
-                                <input type="checkbox" className="form-control" id="toggle" onChange={this.modalFormToggle} checked={this.props.object.cantoggle}/>
+                                <input type="checkbox" id="toggle" onChange={this.modalFormToggle} checked={this.props.object.cantoggle}/>
                                 Can be toggled
                             </label>
                         </div>

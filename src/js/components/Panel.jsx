@@ -316,9 +316,9 @@ export default class Panel extends React.Component {
             <div className="tabPanel">
                 <div className="tabActions">
                     <button onClick={this.modalOpen}>Creer un nouveau Element</button>
-                    <button onClick={this.refreshAll}>refresh</button>
-                    <button onClick={this.openAll}>openAll</button>
-                    <button onClick={this.closeAll}>closeAll</button>
+                    <button onClick={this.refreshAll}>Raffraichir</button>
+                    <button onClick={this.openAll}>Déplier tout les éléments</button>
+                    <button onClick={this.closeAll}>Plier tout les éléments</button>
                 </div>
                 <ResponsiveReactGridLayout
                     ref={this.props.id}
