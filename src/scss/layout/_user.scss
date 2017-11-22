@@ -1,4 +1,7 @@
 .layout-user {
+  $bg: #fafafa;
+  $border: #ccc;
+
   .rotation .item {
     font-size: 1.2em;
     padding-right: 10px;
@@ -6,5 +9,23 @@
 
   .actions {
     float: right;
+  }
+
+  blockquote {
+    background: $bg;
+    border-left: 10px solid $border;
+    margin-top: 10px;
+    padding: .5em 10px;
+    font-size: 1em;
+    quotes: '\201C''\201D''\2018''\2019';
+  }
+
+  blockquote::before {
+    color: $border;
+    content: open-quote;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em;
   }
 }
