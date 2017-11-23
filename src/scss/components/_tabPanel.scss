@@ -20,4 +20,15 @@
       background-color: lighten($blue, 20);
     }
   }
+
+  .compteur {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    padding-top: 25%;
+    font-size: 20em;
+  }
 }

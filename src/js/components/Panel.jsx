@@ -61,6 +61,11 @@ export default class Panel extends React.Component {
             savedLayouts: savedLayouts,
             objects: objects
         });
+        this.interval = setInterval(() => this.tick(), 1000);
+    }
+
+    tick() {
+        this.forceUpdate();
     }
 
     newComponentReinit() {
@@ -312,9 +317,22 @@ export default class Panel extends React.Component {
             );
         });
         const displayedLayout = this.getDisplayedLayout();
+        const panelStyle = {
+            backgroundImage: 'url(http://desaintvincent.com/images/cochon_popper.jpg)',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat'
+        };
+        console.log('render');
+        const inputDate = new Date("11/24/2017");
+        const todaysDate = new Date();
+        inputDate.setHours(10,0,0,0);
+        const diff = inputDate.getTime() - todaysDate.getTime();
+        const compteur = <div className="compteur">{ Math.round(diff / 1000 / 3600)}:{Math.round(diff / 1000 / 60 % 60)}:{ Math.round(diff / 1000) % 60}</div>;
         return (
-            <div className="tabPanel">
+            <div className="tabPanel" style={ inputDate.getTime() < todaysDate.getTime() ? panelStyle : {} }>
                 <div className="tabActions">
+                    {inputDate.getTime() > todaysDate.getTime() ? compteur : ''}
                     <button onClick={this.modalOpen}>Creer un nouveau Element</button>
                     <button onClick={this.refreshAll}>Raffraichir</button>
                     <button onClick={this.openAll}>Déplier tout les éléments</button>
