@@ -327,8 +327,15 @@ export default class Panel extends React.Component {
         const inputDate = new Date("11/24/2017");
         const todaysDate = new Date();
         inputDate.setHours(10,0,0,0);
+        
         const diff = inputDate.getTime() - todaysDate.getTime();
-        const compteur = <div className="compteur">{ Math.round(diff / 1000 / 3600)}:{Math.round(diff / 1000 / 60 % 60)}:{ Math.round(diff / 1000) % 60}</div>;
+        const tmp = 24 * 3600;
+        const days = Math.floor(diff / tmp);
+        const hours = Math.floor((diff - (days * tmp)) / 3600);
+        const minutes = Math.floor((diff - ((days * tmp + hours * 3600))) / 60);
+        const secondes = Math.floor(diff - ((days * tmp + hours * 3600 + minutes * 60)));
+
+        const compteur = <div className="compteur">{ hours }:{ minutes }:{ secondes }</div>;
         return (
             <div className="tabPanel" style={ inputDate.getTime() < todaysDate.getTime() ? panelStyle : {} }>
                 <div className="tabActions">
