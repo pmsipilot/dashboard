@@ -328,7 +328,7 @@ export default class Panel extends React.Component {
         const todaysDate = new Date();
         inputDate.setHours(10,0,0,0);
         
-        const diff = inputDate.getTime() - todaysDate.getTime();
+        const diff = (inputDate - todaysDate) / 1000;
         const tmp = 24 * 3600;
         const days = Math.floor(diff / tmp);
         const hours = Math.floor((diff - (days * tmp)) / 3600);
