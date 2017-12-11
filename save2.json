@@ -1,0 +1,273 @@
+{
+  "main": {
+    "label": "Main",
+    "objects": {
+      "animateur": {
+        "name": "Animateur",
+        "slug": "animateur",
+        "url": "src/json/datas/users.json",
+        "serializer": "User",
+        "layout": "User",
+        "cantoggle": false
+      },
+      "test-master": {
+        "name": "test-master",
+        "slug": "test-master",
+        "url": "http://srv-hudson:8080/view/pmsipilot-master/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true,
+        "small": false
+      },
+      "test-released": {
+        "name": "test-released",
+        "slug": "test-released",
+        "url": "http://srv-hudson:8080/view/pmsipilot-released/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "portail": {
+        "name": "Portail",
+        "slug": "portail",
+        "url": "http://srv-hudson:8080/view/bi-master/view/portail//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "query": {
+        "name": "Query",
+        "slug": "query",
+        "url": "http://srv-hudson:8080/view//bi-master/view/query//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "test-dependencies": {
+        "name": "test dependencies",
+        "slug": "test-dependencies",
+        "url": "http://srv-hudson:8080/view/pmsipilot-dependencies/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "test-build": {
+        "name": "test build",
+        "slug": "test-build",
+        "url": "http://srv-hudson:8080/view/pmsipilot-build/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "referentiel": {
+        "name": "Referentiel",
+        "slug": "referentiel",
+        "url": "http://srv-hudson:8080/view//bi-master/view/referentiel//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "superviseur": {
+        "name": "Superviseur",
+        "slug": "superviseur",
+        "url": "http://srv-hudson:8080/view//bi-master/view/superviseur//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "database": {
+        "name": "Database",
+        "slug": "database",
+        "url": "http://srv-hudson:8080/view//bi-master/view/database//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "directory": {
+        "name": "Directory",
+        "slug": "directory",
+        "url": "http://srv-hudson:8080/view//bi-master/view/directory//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "java-commons": {
+        "name": "Java commons",
+        "slug": "java-commons",
+        "url": "http://srv-hudson:8080/view//bi-master/view/java-commons//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "metadata": {
+        "name": "Metadata",
+        "slug": "metadata",
+        "url": "http://srv-hudson:8080/view//bi-master/view/metadata//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "tests": {
+        "name": "Tests",
+        "slug": "tests",
+        "url": "src/json/datas/users.json",
+        "serializer": "User",
+        "layout": "User",
+        "cantoggle": false
+      },
+      "azeaze": {
+        "name": "azeaze",
+        "slug": "azeaze",
+        "url": "http://srv-hudson:8080/view/pmsipilot-master/api/json",
+        "serializer": "Jenkins",
+        "layout": "Camembert"
+      }
+    },
+    "layouts": {
+      "lg": [
+        {
+          "w": 6,
+          "h": 3,
+          "x": 0,
+          "y": 0,
+          "i": "animateur",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 15,
+          "x": 0,
+          "y": 3,
+          "i": "test-master",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 15,
+          "x": 3,
+          "y": 3,
+          "i": "test-released",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 0,
+          "y": 18,
+          "i": "portail",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 3,
+          "y": 4,
+          "i": "query",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 6,
+          "y": 3,
+          "i": "test-dependencies",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 9,
+          "y": 3,
+          "i": "test-build",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 6,
+          "y": 4,
+          "i": "referentiel",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 9,
+          "y": 4,
+          "i": "superviseur",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 0,
+          "y": 19,
+          "i": "database",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 3,
+          "y": 5,
+          "i": "directory",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 4,
+          "x": 6,
+          "y": 5,
+          "i": "java-commons",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 16,
+          "x": 9,
+          "y": 5,
+          "i": "metadata",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 6,
+          "h": 3,
+          "x": 6,
+          "y": 0,
+          "i": "tests",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 6,
+          "y": 6,
+          "i": "azeaze",
+          "moved": false,
+          "static": false
+        }
+      ]
+    }
+  },
+  "graphs": {
+    "label": "graphs",
+    "layouts": {
+      "lg": []
+    },
+    "objects": []
+  }
+}
