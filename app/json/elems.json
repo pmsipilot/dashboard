@@ -1,0 +1,251 @@
+{
+  "main": {
+    "label": "Main",
+    "objects": {
+      "pmsipilot-master": {
+        "name": "pmsipilot-master",
+        "slug": "pmsipilot-master",
+        "url": "http://srv-hudson:8080/view/pmsipilot-master/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true,
+        "small": false
+      },
+      "pmsipilot-released": {
+        "name": "pmsipilot-released",
+        "slug": "pmsipilot-released",
+        "url": "http://srv-hudson:8080/view/pmsipilot-released/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "portail": {
+        "name": "Portail",
+        "slug": "portail",
+        "url": "http://srv-hudson:8080/view/bi-master/view/portail//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "query": {
+        "name": "Query",
+        "slug": "query",
+        "url": "http://srv-hudson:8080/view//bi-master/view/query//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "pmsipilot-dependencies": {
+        "name": "Pmsipilot dependencies",
+        "slug": "pmsipilot-dependencies",
+        "url": "http://srv-hudson:8080/view/pmsipilot-dependencies/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "pmsipilot-build": {
+        "name": "Pmsipilot build",
+        "slug": "pmsipilot-build",
+        "url": "http://srv-hudson:8080/view/pmsipilot-build/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "referentiel": {
+        "name": "Referentiel",
+        "slug": "referentiel",
+        "url": "http://srv-hudson:8080/view//bi-master/view/referentiel//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "superviseur": {
+        "name": "Superviseur",
+        "slug": "superviseur",
+        "url": "http://srv-hudson:8080/view//bi-master/view/superviseur//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "database": {
+        "name": "Database",
+        "slug": "database",
+        "url": "http://srv-hudson:8080/view//bi-master/view/database//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "directory": {
+        "name": "Directory",
+        "slug": "directory",
+        "url": "http://srv-hudson:8080/view//bi-master/view/directory//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "java-commons": {
+        "name": "Java commons",
+        "slug": "java-commons",
+        "url": "http://srv-hudson:8080/view//bi-master/view/java-commons//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "metadata": {
+        "name": "Metadata",
+        "slug": "metadata",
+        "url": "http://srv-hudson:8080/view//bi-master/view/metadata//api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      },
+      "metadata-data-ods": {
+        "name": "Metadata-Data-ODS",
+        "slug": "metadata-data-ods",
+        "url": "http://srv-hudson:8080/view/index/view/bi-master/view/metadata-data-ods/api/json",
+        "serializer": "Jenkins",
+        "layout": "Jenkins",
+        "cantoggle": true
+      }
+    },
+    "layouts": {
+      "lg": [
+        {
+          "w": 12,
+          "h": 4,
+          "x": 0,
+          "y": 0,
+          "i": "animateur",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 14,
+          "x": 0,
+          "y": 4,
+          "i": "pmsipilot-master",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 14,
+          "x": 3,
+          "y": 4,
+          "i": "pmsipilot-released",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 0,
+          "y": 18,
+          "i": "portail",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 3,
+          "y": 18,
+          "i": "query",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 6,
+          "y": 4,
+          "i": "pmsipilot-dependencies",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 3,
+          "x": 9,
+          "y": 4,
+          "i": "pmsipilot-build",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 6,
+          "y": 5,
+          "i": "referentiel",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 9,
+          "y": 5,
+          "i": "superviseur",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 0,
+          "y": 30,
+          "i": "database",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 12,
+          "x": 3,
+          "y": 30,
+          "i": "directory",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 4,
+          "x": 6,
+          "y": 17,
+          "i": "java-commons",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 16,
+          "x": 9,
+          "y": 17,
+          "i": "metadata",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 7,
+          "x": 6,
+          "y": 18,
+          "i": "metadata-data-ods",
+          "moved": false,
+          "static": false
+        },
+        {
+          "w": 3,
+          "h": 21,
+          "x": 9,
+          "y": 33,
+          "i": "bi-10-nightly",
+          "moved": false,
+          "static": false
+        }
+      ]
+    }
+  }
+}

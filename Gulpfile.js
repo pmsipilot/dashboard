@@ -1,108 +1,82 @@
-//dependencies
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const notify = require("gulp-notify");
+var sourcemaps = require('gulp-sourcemaps');
+var argv = require('yargs').argv;
+var gulpif = require('gulp-if');
+var gulp = require('gulp');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
+var fs = require('fs');
+var babel = require('gulp-babel');
 const concat = require('gulp-concat');
-const scsslint = require('gulp-scss-lint');
-const eslint = require('gulp-eslint');
-const gutil = require('gulp-util');
+const sass = require('gulp-sass');
 
-const path = {
-    'sass' : {
-        'watch': 'src/scss/**/*.scss',
-        'src': 'src/scss/app.scss',
-        'dest': 'dist/css/',
-        'name': 'app.css',
-        'cs': [
-            'src/scss/app.scss',
-            'src/scss/_variables.scss',
-            'src/scss/components/*.scss',
-            'src/scss/layout/*.scss'
-        ]
-    },
-    'jsx' : {
-        'cs' : [
-            'src/js/components/*.jsx',
-            'src/js/helper/*.jsx',
-            'src/js/layout/*.jsx',
-            'src/js/serializer/*.jsx'
-        ]
-    }
-};
+gulp.task('build/client', function() {
+    var options = {
+        entries: './app/js/client/client.jsx',
+        extensions: ['.jsx', '.js'],
+        debug: argv.production ? false : true,
+        paths: ['./app/js/client/']
+    };
 
-gulp.task('lint_scss', function() {
-    return gulp.src(path.sass.cs)
-        .pipe(scsslint({
-            //'customReport': myCustomReporter,
-            'config': 'eslint.yml'
-        }));
+    return browserify(options)
+        .transform(babelify)
+        .bundle()
+        .pipe(source('client.js'))
+        .pipe(gulpif(argv.production, buffer()))
+        .pipe(gulpif(argv.production, uglify()))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist'));
 });
 
-
-gulp.task('lint_js', () => {
-    return gulp.src(path.jsx.cs)
-        .pipe(eslint({
-            "parserOptions": {
-                "ecmaVersion": 7,
-                "sourceType": "module",
-                "ecmaFeatures": {
-                    "jsx": true,
-                }
-            },
-            "plugins": [
-                "react",
-                "react-native"
-            ],
-            "extends": ["eslint:recommended", "plugin:react/recommended"],
-            "settings": {
-                "react": {
-                    "pragma": "React",
-                    "version": "0.14.8"
-                }
-            }
-        }))
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+gulp.task('build/server', function() {
+    return gulp.src('./app/js/server/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        .pipe(concat('server.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist'))
 });
 
-// task
-gulp.task('sass', ['lint_scss'], function() {
-    gulp.src(path.sass.src)
+gulp.task('build/sass', function() {
+    gulp.src('./app/scss/app.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed',
             onError: function (err) {
                 console.log(err);
-                notify().write({
-                    title: 'Gulp: Error SASS',
-                    message: sass.logError
-                });
             }
         }).on('error', sass.logError))
-        .pipe(concat(path.sass.name))
-        .pipe(gulp.dest(path.sass.dest))
-        .pipe(notify("sass ok"));
+        .pipe(concat('client.css'))
+        .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch_sass',function() {
-    gulp.watch(path.sass.watch,['sass']);
+gulp.task('watch/server',function() {
+    gulp.watch('./app/js/server/**/*.js', ['build/server']);
 });
 
-gulp.task('watch_js',function() {
-    gulp.watch(path.jsx.cs,['lint_js']);
+gulp.task('watch/client',function() {
+    gulp.watch('./app/js/client/**/*.jsx', ['build/client']);
 });
 
-gulp.task('cs', [
-    'lint_js',
-    'lint_scss'
-]);
+gulp.task('watch/sass',function() {
+    gulp.watch('./app/scss/**/*.scss', ['build/sass']);
+});
 
 gulp.task('build', [
-    'sass'
+    'build/sass',
+    'build/client',
+    'build/server'
+]);
+
+gulp.task('watch', [
+    'watch/sass',
+    'watch/client',
+    'watch/server'
 ]);
 
 gulp.task('default', [
-    'sass',
-    'watch_sass',
-    'watch_js'
+    'build',
+    'watch'
 ]);
-
