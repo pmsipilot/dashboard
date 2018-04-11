@@ -1,4 +1,5 @@
-const sourcemaps = require('gulp-sourcemaps');
+'use strict';
+import sourcemaps from 'gulp-sourcemaps';
 const argv = require('yargs').argv;
 const gulpif = require('gulp-if');
 const gulp = require('gulp');
@@ -21,7 +22,7 @@ gulp.task('build/client', function() {
     };
 
     return browserify(options)
-        .transform("babelify", {presets: ["es2015", "react"]})
+        .transform('babelify', {presets: ['es2015', 'react']})
         .bundle()
         .pipe(source('client.js'))
         .pipe(gulpif(argv.production, buffer()))
