@@ -33,10 +33,12 @@ gulp.task('build/client', function() {
 gulp.task('build/server', function() {
     return gulp.src('./app/js/server/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(concat('server.js'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build/sass', function() {

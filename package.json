@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "./node_modules/.bin/gulp & ./node_modules/.bin/nodemon dist/server.js",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "./node_modules/.bin/gulp build",
+    "clean": "rm -rf node_modules dist"
   },
   "author": "Thomas Robert de Saint Vincent",
   "license": "ISC",
