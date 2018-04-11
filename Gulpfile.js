@@ -1,19 +1,19 @@
-var sourcemaps = require('gulp-sourcemaps');
-var argv = require('yargs').argv;
-var gulpif = require('gulp-if');
-var gulp = require('gulp');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var uglify = require('gulp-uglify');
-var buffer = require('vinyl-buffer');
-var fs = require('fs');
-var babel = require('gulp-babel');
+const sourcemaps = require('gulp-sourcemaps');
+const argv = require('yargs').argv;
+const gulpif = require('gulp-if');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const uglify = require('gulp-uglify');
+const buffer = require('vinyl-buffer');
+const fs = require('fs');
+const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 
 gulp.task('build/client', function() {
-    var options = {
+    const options = {
         entries: './app/js/client/client.jsx',
         extensions: ['.jsx', '.js'],
         debug: argv.production ? false : true,
@@ -21,7 +21,7 @@ gulp.task('build/client', function() {
     };
 
     return browserify(options)
-        .transform(babelify)
+        .transform("babelify", {presets: ["es2015", "react"]})
         .bundle()
         .pipe(source('client.js'))
         .pipe(gulpif(argv.production, buffer()))
@@ -34,7 +34,7 @@ gulp.task('build/server', function() {
     return gulp.src('./app/js/server/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel({
-            presets: ['es2015']
+            presets: ['es2015', 'react']
         }))
         .pipe(concat('server.js'))
         .pipe(sourcemaps.write('.'))
@@ -42,7 +42,7 @@ gulp.task('build/server', function() {
 });
 
 gulp.task('build/sass', function() {
-    gulp.src('./app/scss/app.scss')
+    return gulp.src('./app/scss/app.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed',
