@@ -23,7 +23,7 @@ COPY --from=builder-front /var/www/html/assets /var/www/html/assets/
 COPY --from=builder-front /var/www/html/dist /var/www/html/dist/
 COPY --from=builder-front /var/www/html/app/html /var/www/html/app/html/
 COPY --from=builder-front /var/www/html/app/json /var/www/html/app/json
-COPY /var/www/html/app/js/server /var/www/html/app/js/server
+COPY app/js/server /var/www/html/app/js/server
 
 EXPOSE 3000
 

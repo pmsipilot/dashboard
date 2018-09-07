@@ -47,7 +47,7 @@ export default class Panel extends React.Component {
     }
 
     openAll() {
-        const objects = this.state.objects;
+        const objects = this.props.objects;
         Object.keys(objects).forEach((key) => {
             if (objects[key].cantoggle) {
                 objects[key].small = false;
@@ -59,7 +59,7 @@ export default class Panel extends React.Component {
     }
 
     closeAll() {
-        const objects = this.state.objects;
+        const objects = this.props.objects;
         Object.keys(objects).forEach((key) => {
             if (objects[key].cantoggle) {
                 objects[key].small = true;
@@ -71,7 +71,7 @@ export default class Panel extends React.Component {
     }
 
     actionToggleSizeElement(key) {
-        const objects = this.state.objects;
+        const objects = this.props.objects;
         objects[key].small = !objects[key].small;
         this.setState({
             objects: objects
@@ -79,17 +79,17 @@ export default class Panel extends React.Component {
     }
 
     getDisplayedLayout() {
-        const layoutsDisplay = this.state.savedLayouts;
-        if (this.state.savedLayouts.lg === undefined) {
-            return this.state.savedLayouts;
+        const layoutsDisplay = this.props.layouts;
+        if (this.props.layouts.lg === undefined) {
+            return this.props.layouts;
         }
         const newLayouts = {};
         newLayouts.lg = layoutsDisplay.lg.map(layout => {
             const newLayout = {};
             Object.assign(newLayout, layout);
             const slug = newLayout.i;
-            if (this.state.objects[slug] !== undefined && this.state.objects[slug].cantoggle
-                && this.state.objects[slug].small) {
+            if (this.props.objects[slug] !== undefined && this.props.objects[slug].cantoggle
+                && this.props.objects[slug].small) {
                 newLayout.h = 1;
             }
             return newLayout;
@@ -103,8 +103,8 @@ export default class Panel extends React.Component {
         if (newLayouts.lg !== undefined) {
             layoutsToSave.lg = newLayouts.lg.map((l, index) => {
                 const newLayout = l;
-                if (this.state.savedLayouts.lg !== undefined && this.state.savedLayouts.lg[index] !== undefined) {
-                    const oldlayout = this.state.savedLayouts.lg[index];
+                if (this.props.layouts.lg !== undefined && this.props.layouts.lg[index] !== undefined) {
+                    const oldlayout = this.props.layouts.lg[index];
                     if (oldlayout.i === newLayout.i && newLayout.h === 1) {
                         newLayout.h = oldlayout.h;
                     }
@@ -112,11 +112,6 @@ export default class Panel extends React.Component {
                 return newLayout;
             });
         }
-        /*
-        this.setState({
-            savedLayouts: LS.setLayouts(this.props.id, layoutsToSave)
-        });
-        */
     }
 
     onDragStart() {
@@ -136,7 +131,7 @@ export default class Panel extends React.Component {
     }
 
     render() {
-        if (this.state.savedLayouts === null || this.state.objects === null) {
+        if (this.props.layouts === null || this.props.objects === null) {
             return (
                 <div className="loading">
                     Loading...
@@ -144,8 +139,8 @@ export default class Panel extends React.Component {
             );
         }
 
-        const objects = Object.keys(this.state.objects).map((index) => {
-            const obj = this.state.objects[index];
+        const objects = Object.keys(this.props.objects).map((index) => {
+            const obj = this.props.objects[index];
             if (obj.small === undefined) {
                 obj.small = obj.cantoggle;
             }

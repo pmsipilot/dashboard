@@ -34,10 +34,10 @@ export default class Elem extends React.Component {
     loadDatas() {
         clearTimeout(this.state.timeout);
         this.setState({data: false});
-        axios.get(this.state.object.url)
+        axios.get(this.props.object.url)
             .then(res => {
                 this.setState({
-                    data: Serializers[this.state.object.serializer].serialize(res.data),
+                    data: Serializers[this.props.object.serializer].serialize(res.data),
                     error: false
                 });
             })
@@ -70,7 +70,6 @@ export default class Elem extends React.Component {
     }
 
     actionsCallback(object) {
-        this.setState({ object: object });
         this.props.onChange(object);
     }
 
@@ -83,7 +82,7 @@ export default class Elem extends React.Component {
         const elemAction = (
             <ElemActions
                 see_url={this.state.data.url}
-                object={this.state.object}
+                object={this.props.object}
                 onChange={this.actionsCallback}
                 onDelete={this.actionDelete}
                 onToggleSize={this.actionToggleSize}
@@ -101,11 +100,11 @@ export default class Elem extends React.Component {
             );
         }
 
-        const Layout = Layouts[this.state.object.layout];
+        const Layout = Layouts[this.props.object.layout];
         return (
             <Layout
                 data={this.state.data}
-                object={this.state.object}>
+                object={this.props.object}>
                 {elemAction}
             </Layout>
         );
