@@ -14,7 +14,7 @@ export default class BoardTabs extends React.Component {
     }
 
     render() {
-        if (this.props.data == null) {
+        if (this.props.data === null) {
             return (
                 <div>LOADING</div>
             );

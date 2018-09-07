@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                             <span></span>
                         </div>
                     </div>
-                    <h1>EaserBoard</h1>
+                    <h1>DashBoard</h1>
                 </div>
                 <div className="right">
                     <div className="actions">
@@ -60,11 +60,9 @@ export default class Header extends React.Component {
                                     <Glyphicon glyph="cog"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <MenuItem eventKey="1" onClick={() => this.setState({modal: true})}>Importer une
-                                        configuration</MenuItem>
+                                    <MenuItem eventKey="1" onClick={() => this.setState({modal: true})}>Import a configuration file</MenuItem>
                                     <MenuItem divider/>
-                                    <MenuItem eventKey="3" onClick={this.dataClear}>Réinitialiser toute la
-                                        configuration</MenuItem>
+                                    <MenuItem eventKey="3" onClick={this.dataClear}>Clear the configuration</MenuItem>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </ButtonToolbar>
@@ -76,20 +74,20 @@ export default class Header extends React.Component {
                     aria-labelledby="ModalHeader">
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <Modal.Header closeButton>
-                            <Modal.Title id='ModalHeader'>Importer une config</Modal.Title>
+                            <Modal.Title id='ModalHeader'>Import a configuration file</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <div className="row">
                                 <div className="form-group">
-                                    <label htmlFor="importConfig">Fichier:</label>
+                                    <label htmlFor="importConfig">File:</label>
                                     <input type="file" className="form-control" id="importConfig" ref={this.fileInput}/>
                                 </div>
                             </div>
                         </Modal.Body>
                         <Modal.Footer>
-                            <button className="btn btn-link" onClick={(e) => this.closeModal(e)}>Annuler</button>
+                            <button className="btn btn-link" onClick={(e) => this.closeModal(e)}>Cancel</button>
                             <button className='btn btn-primary' type="submit">
-                                Importer
+                                Import
                             </button>
                         </Modal.Footer>
                     </form>

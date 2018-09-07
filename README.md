@@ -25,7 +25,7 @@ This command will launch a container from the docker image previously created in
 $ docker run -p 8080:3000 --name dashboard --rm -it dashboard-image
 ```
 
-The application is available at the following URL : `http://localhost:8080`
+The application is available at the following URL : [http://localhost:8080](http://localhost:8080)
 
 ## License
 This project is released under the [MIT license](LICENSE)

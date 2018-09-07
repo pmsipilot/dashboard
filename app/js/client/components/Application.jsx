@@ -27,6 +27,10 @@ export default class Application extends React.Component {
     loadData() {
         axios.get('/api/elems').then((response) => {
             this.setState({data: response.data});
+        }).catch((err) => {
+            if (err.response && err.response.status === 404) {
+                this.setState({data: {"main": {"label": "Main", "objects": {}, "layouts": {}}}});
+            }
         });
     }
 
