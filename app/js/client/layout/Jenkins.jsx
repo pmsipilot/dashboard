@@ -21,7 +21,7 @@ export default class Jenkins extends React.Component {
                                     {job.name}
                                 </div>
                                 <span className="view">
-                                    <a href={job.url}><i className='glyphicon glyphicon-eye-open'></i></a>
+                                    <a href={job.url} target="_blank"><i className='glyphicon glyphicon-eye-open'></i></a>
                                 </span>
                             </div>
                         )}
