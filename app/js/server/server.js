@@ -1,24 +1,34 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '..', '..', 'html')));
 app.use('/dist', express.static(path.join(__dirname, '..', '..', '..', 'dist')));
 app.use('/assets', express.static(path.join(__dirname, '..', '..', '..', 'assets')));
 
-app.get('/api/elems/get', function (req, res) {
-    fs.readFile(path.join(__dirname, '..', '..', 'json',  'elems.json'), 'utf8', function(err, text) {
+const elemsFilePath = path.join(__dirname, '..', '..', 'json',  'elems.json');
+
+app.get('/api/elems', function (req, res) {
+    fs.readFile(elemsFilePath, 'utf8', function(err, text) {
         if (err) {
-            res.send(err)
+            res.status(500).send(err)
         }
         res.send(text);
     });
 });
 
-app.post('/api/elems/set', function (req, res) {
-    res.send('ok');
+app.post('/api/elems', function (req, res) {
+    const data = req.body.data === undefined ? '{}' : req.body.data;
+    fs.writeFile(elemsFilePath, data, (err) => {
+        if (err) res.status(500).send(err);
+
+        res.status(204).send();
+    });
 });
 
 const server = app.listen(3000, function () {

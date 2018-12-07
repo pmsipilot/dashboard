@@ -12,57 +12,30 @@ export default class Header extends React.Component {
         super(props);
 
         this.state = {
-            importConfig: {
-                modal: false,
-                tabs: null
-            }
+            modal: false,
         };
 
         this.dataClear = this.dataClear.bind(this);
-        this.modalImportOpen = this.modalImportOpen.bind(this);
-        this.modalImportClose = this.modalImportClose.bind(this);
-        this.modalImportChange = this.modalImportChange.bind(this);
-        this.modalImportApply = this.modalImportApply.bind(this);
+        this.fileInput = React.createRef();
     }
 
-    modalImportOpen() {
-        const importConfig = this.state.importConfig;
-        importConfig.modal = true;
-        this.setState({importConfig: importConfig});
-    }
-
-    modalImportClose() {
-        const importConfig = this.state.importConfig;
-        importConfig.modal = false;
-        this.setState({importConfig: importConfig});
-    }
-
-    modalImportChange(event) {
-        const file = event.target.files[0];
-        console.log('file', file);
-        const path = file.path;
-        console.log('path', path);
-        const result = require(path);
-        console.log('result', result);
-
-        const importConfig = this.state.importConfig;
-        importConfig.tabs = result;
-        this.setState({importConfig: importConfig});
-
-    }
-
-    modalImportApply() {
-        if (this.state.importConfig.tabs !== null) {
-            this.setState({importConfig: {
-                modal: false,
-                tabs: null
-            }});
-        }
-        this.props.onChange();
+    handleSubmit(e) {
+        e.preventDefault();
+        const reader = new FileReader();
+        reader.onload = (re) => {
+            this.setState({modal: false});
+            this.props.onChange(re.target.result);
+        };
+        reader.readAsBinaryString(this.fileInput.current.files[0]);
     }
 
     dataClear() {
-        this.props.onChange();
+        this.props.onChange('{"main": {"label": "Main", "objects": {}, "layouts": {}}}');
+    }
+
+    closeModal(e) {
+        e.preventDefault();
+        this.setState({modal: false});
     }
 
     render() {
@@ -71,20 +44,15 @@ export default class Header extends React.Component {
                 <div className="left">
                     <div className="logo">
                         <div className="circles">
-                            <div className="un"></div>
-                            <div className="deux"></div>
-                            <div className="trois"></div>
+                            <div className="red"></div>
+                            <div className="yellow"></div>
+                            <div className="green"></div>
                             <span></span>
                         </div>
                     </div>
                     <h1>EaserBoard</h1>
                 </div>
                 <div className="right">
-                    <div className="version">
-                        <span>V</span>
-                        <span>Pré-Alpha</span>
-                    </div>
-
                     <div className="actions">
                         <ButtonToolbar>
                             <Dropdown id="config" pullRight>
@@ -92,7 +60,7 @@ export default class Header extends React.Component {
                                     <Glyphicon glyph="cog"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <MenuItem eventKey="1" onClick={this.modalImportOpen}>Importer une
+                                    <MenuItem eventKey="1" onClick={() => this.setState({modal: true})}>Importer une
                                         configuration</MenuItem>
                                     <MenuItem divider/>
                                     <MenuItem eventKey="3" onClick={this.dataClear}>Réinitialiser toute la
@@ -103,23 +71,28 @@ export default class Header extends React.Component {
                     </div>
                 </div>
                 <Modal
-                    show={this.state.importConfig.modal}
-                    onHide={this.modalImportClose}
+                    show={this.state.modal}
+                    onHide={(e) => this.closeModal(e)}
                     aria-labelledby="ModalHeader">
-                    <Modal.Header closeButton>
-                        <Modal.Title id='ModalHeader'>Importer une config</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div className="form-group">
-                            <label htmlFor="importConfig">Fichier:</label>
-                            <input type="file" className="form-control" id="importConfig" onChange={this.modalImportChange}/>
-                        </div>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <button className='btn btn-primary' onClick={this.modalImportApply}>
-                            Importer
-                        </button>
-                    </Modal.Footer>
+                    <form onSubmit={(e) => this.handleSubmit(e)}>
+                        <Modal.Header closeButton>
+                            <Modal.Title id='ModalHeader'>Importer une config</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="row">
+                                <div className="form-group">
+                                    <label htmlFor="importConfig">Fichier:</label>
+                                    <input type="file" className="form-control" id="importConfig" ref={this.fileInput}/>
+                                </div>
+                            </div>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <button className="btn btn-link" onClick={(e) => this.closeModal(e)}>Annuler</button>
+                            <button className='btn btn-primary' type="submit">
+                                Importer
+                            </button>
+                        </Modal.Footer>
+                    </form>
                 </Modal>
             </header>
         );

@@ -42,17 +42,18 @@ header {
           height: 100%;
           border-left: $weight solid;
           border-radius: 100%;
+          border-top: $weight solid;
 
-          &.un {
-            border-top: $weight solid $red;
+          &.red {
+            border-top-color: $red;
           }
 
-          &.deux {
-            border-top: $weight solid $yellow;
+          &.yellow {
+            border-top-color: $yellow;
           }
 
-          &.trois {
-            border-top: $weight solid $green;
+          &.green {
+            border-top-color: $green;
           }
 
           @for $i from 1 through 3 {
