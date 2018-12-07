@@ -1,25 +1,30 @@
-FROM node:alpine
+FROM node:alpine AS builder-front
+
+ENV NODE_ENV development
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /var/www/html
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+COPY Makefile /var/www/html/Makefile
+COPY package.json /var/www/html/package.json
+COPY package-lock.json /var/www/html/package-lock.json
+COPY app/ /var/www/html/app/
+COPY assets/ /var/www/html/assets/
 
-COPY gulpfile.babel.js ./
+RUN apk add --update make
+RUN make up
 
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
+FROM node:alpine
 
-# Bundle app source
-COPY . .
+WORKDIR /var/www/html
 
-RUN npm run build
-
+COPY --from=builder-front /var/www/html/node_modules /var/www/html/node_modules/
+COPY --from=builder-front /var/www/html/assets /var/www/html/assets/
+COPY --from=builder-front /var/www/html/dist /var/www/html/dist/
+COPY --from=builder-front /var/www/html/app/html /var/www/html/app/html/
+COPY --from=builder-front /var/www/html/app/json /var/www/html/app/json
+COPY /var/www/html/app/js/server /var/www/html/app/js/server
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "node", "/var/www/html/app/js/server/server.js" ]

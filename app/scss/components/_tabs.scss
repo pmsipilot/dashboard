@@ -5,23 +5,6 @@
     outline: 0;
   }
 
-  .addTab {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: $h-tab;
-    height: $h-tab;
-    z-index: 2;
-    border-bottom: 1px solid $lightgrey;
-    border-left: 1px solid $lightgrey;
-    text-align: center;
-    padding: 9px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   .react-tabs {
 
     [role=tablist] {

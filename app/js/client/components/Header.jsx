@@ -65,9 +65,6 @@ export default class Header extends React.Component {
         this.props.onChange();
     }
 
-    dataExport() {
-    }
-
     render() {
         return (
             <header className="header application-header">
@@ -87,37 +84,23 @@ export default class Header extends React.Component {
                         <span>V</span>
                         <span>Pré-Alpha</span>
                     </div>
-                    { false &&
-                        <div className="actions">
-                            <ButtonToolbar>
-                                <Dropdown id="config" pullRight>
-                                    <Dropdown.Toggle noCaret>
-                                        <Glyphicon glyph="cog"/>
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu>
-                                        <MenuItem eventKey="1" onClick={this.modalImportOpen}>Importer une
-                                            configuration</MenuItem>
-                                        <MenuItem eventKey="2" onClick={this.dataExport}>Exporter la
-                                            configuration</MenuItem>
-                                        <MenuItem divider/>
-                                        <MenuItem eventKey="3" onClick={this.dataClear}>Réinitialiser toute la
-                                            configuration</MenuItem>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                                <Dropdown id="user" pullRight>
-                                    <Dropdown.Toggle noCaret>
-                                        <Glyphicon glyph="user"/>
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu>
-                                        <MenuItem eventKey="1">Action</MenuItem>
-                                        <MenuItem eventKey="2">Another action</MenuItem>
-                                        <MenuItem eventKey="3" active>Active Item</MenuItem>
-                                        <MenuItem eventKey="4">Separated link</MenuItem>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </ButtonToolbar>
-                        </div>
-                    }
+
+                    <div className="actions">
+                        <ButtonToolbar>
+                            <Dropdown id="config" pullRight>
+                                <Dropdown.Toggle noCaret>
+                                    <Glyphicon glyph="cog"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <MenuItem eventKey="1" onClick={this.modalImportOpen}>Importer une
+                                        configuration</MenuItem>
+                                    <MenuItem divider/>
+                                    <MenuItem eventKey="3" onClick={this.dataClear}>Réinitialiser toute la
+                                        configuration</MenuItem>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </ButtonToolbar>
+                    </div>
                 </div>
                 <Modal
                     show={this.state.importConfig.modal}

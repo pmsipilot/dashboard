@@ -112,8 +112,7 @@ header {
       height: $h-header * .6;
       margin: $h-header * .2;
 
-      .config,
-      .user {
+      .config {
         height: 100%;
         font-size: 1.7em;
         margin-right: $padding-big;
