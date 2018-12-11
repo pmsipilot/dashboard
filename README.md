@@ -2,7 +2,7 @@
 
 Dashboard provides an interface to monitor "Jenkins" job's status for continuous integration.
 
-![dashboard screenshot](resources/images/dashboard.png)
+![dashboard screenshot](https://raw.githubusercontent.com/pmsipilot/dashboard/v1.0.0/resources/images/dashboard.png)
 
 ## Prerequisites
 * [Docker](https://docs.docker.com/)
@@ -15,10 +15,19 @@ $ git clone https://github.com/pmsipilot/dashboard.git
 $ cd dashboard/
 ```
 
-This task will create the docker image for the dashboard, install js dependancies and build css
+This task will create the docker image for the dashboard, install js dependencies and build css
 ```
 $ make docker
 ```
+
+**Alternative**
+
+You can pull the image from the [Docker Hub](https://hub.docker.com/r/pmsipilot/dashboard/)
+```
+$ docker pull pmsipilot/dashboard
+```
+
+---
 
 This command will launch a container from the docker image previously created in detached mode. That way, it is possible to update the code without having to rebuild the container to test it.
 ```
