@@ -14,12 +14,16 @@ app.use('/assets', express.static(path.join(__dirname, '..', '..', '..', 'assets
 const elemsFilePath = path.join(__dirname, '..', '..', 'json',  'elems.json');
 
 app.get('/api/elems', function (req, res) {
-    fs.readFile(elemsFilePath, 'utf8', function(err, text) {
-        if (err) {
-            res.status(500).send(err)
-        }
-        res.send(text);
-    });
+    if (!fs.existsSync(elemsFilePath)) {
+        res.status(404).send();
+    } else {
+        fs.readFile(elemsFilePath, 'utf8', function(err, text) {
+            if (err) {
+                res.status(500).send(err)
+            }
+            res.send(text);
+        });
+    }
 });
 
 app.post('/api/elems', function (req, res) {
